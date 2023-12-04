@@ -6,19 +6,18 @@
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
-
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Student Registration Form</legend>
+            <legend class="border-bottom mb-4">Module Registration System - Login</legend>
             {{ form | crispy }}
         </fieldset>
 
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Register</button>
+            <button class="btn btn-outline-info" type="submit">Login</button>
         </div>
     </form>
 
     <div class="border-top pt-3">
-        <small class="text-muted">Are You Already Registered?<a class="ml-2" href="{% url 'login' %}">Login</a></small>
+        <small class="text-muted">Need to create an account?<a class="ml-2" href="{% url 'register' %}">Register</a></small>
         </div>
     </div>
     {% endblock content %}
