@@ -7,6 +7,7 @@ from django.utils import timezone
 class Profile(models.Model):
     user = models.OneToOneField(User, null = True, on_delete = models.CASCADE)
     image = models.ImageField(default = 'default.jpg', upload_to = 'profile_pics')
+    #course = models.ForeignKey('course.CourseGroup', null = True, on_delete=models.SET_NULL)
     dob = models.DateField(default = timezone.now)
     street = models.CharField(max_length=100, null = True);
     city = models.CharField(max_length=100, null = True);
