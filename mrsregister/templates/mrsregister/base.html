@@ -10,8 +10,8 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
-        <script src="{% static 'js/scripts.js' %}"></script> 
+        <link rel="stylesheet" type="text/css" href="{% static 'css/utility.css' %}" />
+        <script src="{% static 'js/scripts.js' %}"></script>
     </head>
     <body>
         <div class="d-flex" id="wrapper">
@@ -22,8 +22,8 @@
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Modules List</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'modules' %}">Modules</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'profile' %}">Profile</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
                 </div>

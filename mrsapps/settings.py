@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'crispy_bootstrap4',
-    'course.apps.CourseConfig',
+    'modulesreg.apps.ModulesregConfig'
 ]
 
 MIDDLEWARE = [
@@ -115,6 +115,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# Contact form, email functionality
+
+EMAIL_BACKEND = 'django.core.mail.backend.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mrssystem01@gmail.com'
+EMAIL_HOST_PASSWORD = 'Hallampass123'
 
 
 # Static files (CSS, JavaScript, Images)
