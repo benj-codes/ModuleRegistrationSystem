@@ -15,14 +15,14 @@ def modules(request):
     if request.GET.get('search_query'):
         search_query = request.GET.get('search_query')
         print('SEARCH: ', search_query)
-    modules = Module.objects.filter(name__icontains=search_query)
-
-    modules = Module.objects.all()
+        modules = Module.objects.filter(name__icontains=search_query)
+    else:
+        modules = Module.objects.filter(courses__name = request.user.groups.first().name)
 
     for module in modules:
         print(module.name, module.courses.all())
 
-    modules_list = {'modules': Module.objects.all(), 'title': 'Available Modules'}
+    modules_list = {'modules': modules, 'title': 'Available Modules'}
     return render(request, 'modules/modules.html', modules_list)
 
 # """ def get_modules_for_course(student_course):
