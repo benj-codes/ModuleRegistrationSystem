@@ -10,6 +10,13 @@ from django.contrib.auth.models import Group
 
 @login_required
 def modules(request):
+    search_query = ''
+
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
+        print('SEARCH: ', search_query)
+    modules = Module.objects.filter(name__icontains=search_query)
+
     modules = Module.objects.all()
 
     for module in modules:

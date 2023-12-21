@@ -1,7 +1,20 @@
 {% extends "mrsregister/base.html" %}
 {% block content %}
 
-
+<!--Search bar-->
+<div class="row height d-flex justify-content-center align-items-center">
+  <div class="col-md-8">
+    <br>
+    <form class="search" action="{% url 'modules' %}" method="get" width="18rem;">
+      <i class="fa fa-search"></i>
+      <input type="text" class="form-control" placeholder="Search for a module here..." value="{{search_query}}" name="search_query">
+      <p></p>
+      <button class="btn btn-primary">Search</button>
+      <p></p>
+    </form>
+  </div>
+</div>
+<!--Module cards-->
 <div class="container mx-auto mt-4">
   <div class="row">
     <div class="col-md-4">
