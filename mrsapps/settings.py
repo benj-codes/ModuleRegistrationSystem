@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'crispy_bootstrap4',
-    'modules.apps.ModulesConfig'
+    'modules.apps.ModulesConfig',
+    'registrations.apps.RegistrationsConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,41 +1,21 @@
 {% extends "mrsregister/base.html" %}
 {% block content %}
+
 <div class="container mx-auto mt-4">
   <div class="row">
     <div class="col-md-4">
+      {% for module in modules %}
       <div class="card" style="width: 18rem;">
-  <img src="https://www.shu.ac.uk/-/media/home/olp/lead-image/citycantor2computingsuite.jpg?iar=0&mw=500&sc_lang=en&hash=1D010CE704992F66704DF36EC0B59A8B" class="card-img-top" alt="..." width="200" height="200">
+  <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Course name</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Course module</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">{% for per in module.courses.all %} {{ per }} {% endfor %}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Module Code: {{ module.code }}, Module Name: {{ module.name }}</h6>
+    <p class="card-text">{{ module.description }}</p>
        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Register</a>
-    <a href="#" class="btn "><i class="fab fa-github"></i> More info</a>
+    <a href="#" class="btn "><i class="fab fa-github"></i> Info</a>
   </div>
   </div>
-    </div>    
-       <div class="col-md-4">
-<div class="card" style="width: 18rem;">
-  <img src="https://www.clarkson.edu/sites/default/files/2023-06/Software-Engineering-Hero-1600x900.jpg" class="card-img-top" alt="..." width="200" height="200">
-  <div class="card-body">
-    <h5 class="card-title">Course name</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Course module</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="{% url '' module.pk %}" class="btn  mr-2"><i class="fas fa-link"></i> Register</a> <!--Not sure what to enter here as a link-->
-    <a href="#" class="btn"><i class="fab fa-github"></i> More info</a>
-  </div>
-  </div>
-    </div>    
-          <div class="col-md-4">
-<div class="card" style="width: 18rem;">
-  <img src="https://www.uppinghamcollege.org.uk/_site/data/files/images/auto_upload/3E51FE0F663879FC33F03941E0B293F6.jpeg" class="card-img-top" alt="..." width="200" height="200">
-  <div class="card-body">
-    <h5 class="card-title">Course name</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Course module</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Register</a>
-    <a href="#" class="btn "><i class="fab fa-github"></i> More info</a>
-  </div>
-  </div>
-  </div>
+  <p></p> <!-- <p> tag to enable some padding between cards-->
+    {% endfor %}
+
 {% endblock content %}
