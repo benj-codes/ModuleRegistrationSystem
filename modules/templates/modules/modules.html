@@ -6,16 +6,17 @@
   <div class="row">
     <div class="col-md-4">
       {% for module in modules %}
-      <div class="card" style="width: 75rem;">
+      <div class="card" style="width: 18rem;">
   <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{ module.course_set }}</h5>
+    <h5 class="card-title">{% for per in module.courses.all %} {{ per }} {% endfor %}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Module Code: {{ module.code }}, Module Name: {{ module.name }}</h6>
     <p class="card-text">{{ module.description }}</p>
        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Register</a>
     <a href="#" class="btn "><i class="fab fa-github"></i> Github</a>
   </div>
   </div>
+  <p></p> <!-- <p> tag to enable some padding between cards-->
     {% endfor %}
 
 {% endblock content %}

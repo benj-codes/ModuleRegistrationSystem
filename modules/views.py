@@ -4,6 +4,7 @@ from django.db import transaction
 #from course.models import Course
 from modules.models import Module
 from django.views.generic import DetailView
+from django.contrib.auth.models import Group
 
 # Create your views here.
 
@@ -12,9 +13,9 @@ def modules(request):
     modules = Module.objects.all()
 
     for module in modules:
-        print(module.course)
+        print(module.name, module.courses.all())
 
-    modules_list = {'modules': Module.objects.all(), 'title': 'Complete List of Modules'}
+    modules_list = {'modules': Module.objects.all(), 'title': 'Available Modules'}
     return render(request, 'modules/modules.html', modules_list)
 
 # """ def get_modules_for_course(student_course):
