@@ -15,7 +15,7 @@ def modules(request):
     if request.GET.get('search_query'):
         search_query = request.GET.get('search_query')
         print('SEARCH: ', search_query)
-        modules = Module.objects.filter(name__icontains=search_query)
+        modules = Module.objects.filter(name__icontains=search_query, courses__name = request.user.groups.first().name)
     else:
         modules = Module.objects.filter(courses__name = request.user.groups.first().name)
 
