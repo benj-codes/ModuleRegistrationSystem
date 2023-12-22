@@ -5,6 +5,7 @@ from modules.models import Module
 
 # Create your views here.
 
+# allow student to register for module
 @login_required
 def registrations(request, module_id):
     current_user = request.user

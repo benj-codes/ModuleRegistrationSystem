@@ -23,6 +23,7 @@ def modules(request):
         print(module.name, module.courses.all())
 
     modules_list = {'modules': modules, 'title': 'Available Modules'}
+
     return render(request, 'modules/modules.html', modules_list)
 
 # """ def get_modules_for_course(student_course):
