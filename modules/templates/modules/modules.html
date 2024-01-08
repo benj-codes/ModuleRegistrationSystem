@@ -30,7 +30,9 @@
     <hr>
     <h5>Registrations</h5>
     {% for registration in module.registration_set.all %}
+    <img src="{{registration.student.profile.image.url}}" width="75" />
     {{registration.student.username}}
+    <p></p> <!-- <p> tag to enable some padding between user images who've registered-->
     {% endfor %}
   </div>
   </div>

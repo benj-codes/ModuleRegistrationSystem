@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Registration
 from modules.models import Module
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -24,4 +25,13 @@ def unregister(request, module_id):
     registration.delete()
     messages.success(request, f'You have unregistered {module.name}!')
     return redirect('modules')
+
+@login_required
+def myregistrations(request):
+    current_user = request.user
+    registrations = Registration.objects.filter(student=current_user)
+
+    registrations_list = {'registrations': registrations, 'title': 'My Registrations'}
+
+    return render(request, 'modules/myregistrations.html', registrations_list)
     

@@ -34,5 +34,6 @@ urlpatterns = [
     path('module/<int:code>/', modules_views.ModuleDetailView.as_view(), name='module'),
     path('registrations/<int:module_id>/', registrations_views.registrations, name='registrations'),
     path('unregister/<int:module_id>/', registrations_views.unregister, name='unregister'),
+    path('myregistrations/', registrations_views.myregistrations, name='myregistrations'),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

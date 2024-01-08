@@ -1,0 +1,21 @@
+{% extends "mrsregister/base.html" %}
+{% block content %}
+
+<h1>My Registrations</h1>
+<ul>
+  {% for registration in registrations %}
+      <li>
+          <h2>{{ registration.module.name }}</h2>
+          <p>{{ registration.module.description }}</p>
+          <p>Module code: {{ registration.module.code }}</p>
+          <form method="post" action="{% url 'unregister' registration.module.id %}">
+              {% csrf_token %}
+              <button type="submit">Unregister</button>
+          </form>
+      </li>
+  {% empty %}
+      <p>You are not currently registered for any modules.</p>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
