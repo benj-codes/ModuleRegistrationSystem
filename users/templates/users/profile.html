@@ -1,6 +1,11 @@
 {% extends "mrsregister/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<style>
+    h2 {
+        color: blue;
+    }
+</style>
 <div class="content-section">
     <div class="media">
         <p><img class="rounded-circle account-img" src="{{user.profile.image.url}}" height="200" width="200"></p>
@@ -16,7 +21,7 @@
     <form method='POST' enctype="multipart/form-data">
             {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">MRS - Profile Details</legend>
+            <legend class="border-bottom mb-4">Edit Profile</legend>
             {{ u_form | crispy }}
             {{ p_form | crispy }}
         </fieldset>
