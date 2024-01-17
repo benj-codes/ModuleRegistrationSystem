@@ -46,7 +46,8 @@
     <div class="contact-form">
         <h2>Get in Touch</h2>
         <form action="#" method="POST">
-          <label for="username">Your Username:</label>
+            {% csrf_token %}
+            <label for="username">Your name:</label>
           <input type="text" id="username" name="username" required>
       
           <label for="email">Your Email:</label>
@@ -54,7 +55,7 @@
       
           <label for="message">Your Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
-      
+        <p></p>
           <input type="submit" value="Send Message">
         </form>
       </div>      
