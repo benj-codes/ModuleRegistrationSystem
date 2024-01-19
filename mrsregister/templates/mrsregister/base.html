@@ -44,10 +44,12 @@
                                 <li class="nav-item"><a class="nav-link" href="{% url 'mrsregister:about' %}">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{% url 'mrsregister:contact' %}">Contact</a></li>
                                 {% if user.is_authenticated %}
-                                <form name="logoutForm" method="POST" action="{% url 'logout' %}">
-                                    {% csrf_token %}
-                                    <a class="nav-item nav-link" onclick="document.logoutForm.submit()" href="#">Logout</a>
-                                </form>
+                                <li class="nav-item">
+                                    <form name="logoutForm" method="POST" action="{% url 'logout' %}">
+                                        {% csrf_token %}
+                                        <a class=" nav-link" onclick="document.logoutForm.submit()" href="#">Logout</a>
+                                    </form>
+                                </li>
                                 
                                 {% else %}
                                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
