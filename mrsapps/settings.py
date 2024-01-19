@@ -23,10 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+WEBSITE_HOSTNAME = os.environ.get('WEBSITE_HOSTNAME', None)
 
-ALLOWED_HOSTS = ['localhost']
+# SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG =False
+DEBUG = WEBSITE_HOSTNAME == None
+
+#ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [] if DEBUG else [WEBSITE_HOSTNAME]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['https://{WEBSITE_HOSTNAME}']
 
 
 # Application definition
