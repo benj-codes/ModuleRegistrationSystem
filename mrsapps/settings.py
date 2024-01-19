@@ -30,9 +30,9 @@ WEBSITE_HOSTNAME = os.environ.get('WEBSITE_HOSTNAME', None)
 DEBUG = WEBSITE_HOSTNAME == None
 
 #ALLOWED_HOSTS = ['localhost']
-ALLOWED_HOSTS = [] if DEBUG else [WEBSITE_HOSTNAME]
+ALLOWED_HOSTS = [] if DEBUG else [WEBSITE_HOSTNAME, f"{WEBSITE_HOSTNAME}.azurewebsites.net"]
 if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['https://{WEBSITE_HOSTNAME}']
+    CSRF_TRUSTED_ORIGINS = [f'https://{WEBSITE_HOSTNAME}', f'https://{WEBSITE_HOSTNAME}.azurewebsites.net']
 
 
 # Application definition
