@@ -3,6 +3,59 @@
 
 {% block content %}
 
+<style>
+    .content-section {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+fieldset {
+  padding: 10px;
+  border: none;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 10px;
+  border: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link {
+  margin-left: 10px;
+}
+</style>
+
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
