@@ -139,6 +139,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'c0011865@outlook.com'
 EMAIL_HOST_PASSWORD = 'Hallampass123'
+DEFAULT_FROM_EMAIL = 'c0011865@outlook.com'
 
 
 # Static files (CSS, JavaScript, Images)

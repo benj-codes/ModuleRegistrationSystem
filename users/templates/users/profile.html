@@ -2,9 +2,55 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <style>
+    /* Profile Details Section */
     h2 {
-        color: blue;
+        color: rgb(46, 46, 46);
     }
+
+    .media {
+    margin: 2rem;
+    background: linear-gradient(to right, #f5f5f5 50%, #1255d1 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    }
+
+    .rounded-circle account-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    }
+
+    .account-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    }
+
+    .text-secondary {
+    color: #888;
+    }
+    
+    /* Edit Profile Section */
+
+    .profile-form {
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    }
+
+    .form-group {
+    margin-bottom: 1rem;
+    }
+
 </style>
 <div class="content-section">
     <div class="media">
@@ -18,7 +64,7 @@
         
         </div>
     </div>
-    <form method='POST' enctype="multipart/form-data">
+    <form class="profile-form" method='POST' enctype="multipart/form-data">
             {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Edit Profile</legend>
